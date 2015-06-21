@@ -66,7 +66,7 @@ int arrayFindSmallest(int * array, int len)
 size_t my_strlen(const char * str)
 {	
 	size_t len = 0;
-	while (str[len] != '\0'){
+	while (str[len] != '\0') {
 		len++;
 	}
     return len;
@@ -75,11 +75,11 @@ size_t my_strlen(const char * str)
 char * my_strchr(const char * str, int ch)
 {
 	int len = 0;
-	while (str[len] != '\0'){
-		len++;
+	while (str[len] != '\0') {
 		if (str[len] == ch) {
 			return (char *) &str[len];
 		}
+		len++;
 	}
 	if ('\0' == ch) {
 		return (char *) &str[len];
@@ -89,6 +89,20 @@ char * my_strchr(const char * str, int ch)
 
 char * my_strstr(const char * haystack, const char * needle)
 {
+	int loc = 0;
+	int matchLetter = 0;
+	while (haystack[loc] != '\0') {
+		if (needle[matchLetter] == '\0') {
+			return &haystack[loc - matchLetter];
+		}
+		else if (haystack[loc] == needle[matchLetter]) {
+			matchLetter++;
+		}
+		else {
+			matchLetter = 0;
+		}
+		loc++;
+	}
     return NULL;
 }
 
