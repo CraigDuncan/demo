@@ -10,6 +10,12 @@
 
 #define BUFFER_LEN 1024
 
+//function declarations for self made tests
+void test_02_arrayIsIncreasing();
+void test_arrayIsIncreasing(int * array, int len, int expected);
+void test_Haystack(int needle, int * array, int len, int expected);
+void test_03_Haystack();
+
 void printArray(int * array, int len)
 {
     printf("{");
@@ -47,10 +53,10 @@ void test_00_arraySum()
     test_arraySum(array1, len1, expected1);
 
     // Our functions must always work... even on empty arrays
-    int array2[] = {};
+	//int array2[] = {};
     int len2 = 0;
     int expected2 = 0;
-    test_arraySum(array2, len2, expected2);
+    test_arraySum(NULL, len2, expected2);
 
     // You can add more test-cases here
     // ...
@@ -76,9 +82,9 @@ void test_01_arrayCountNegative()
     int len1 = 4;
     test_arrayCountNegative(array1, len1, 1);
 
-    int array2[] = {};
+	//int array2[] = {};
     int len2 = 0;
-    test_arrayCountNegative(array2, len2, 0);
+    test_arrayCountNegative(NULL, len2, 0);
 
     int array3[] = { 0, 1, 2, 3, 4 };
     int len3 = 5;
@@ -93,7 +99,64 @@ void test_01_arrayCountNegative()
 
     printf("\n");
 }
+void test_arrayIsIncreasing(int * array, int len, int expected) {
+	printArray(array, len);
+	int count = arrayIsIncreasing(array, len);
+	printf(". boolean = %d, expected = %d.", count, expected);
+	if (count != expected)
+		printf(" FAIL");
+	printf("\n");
+}
+void test_02_arrayIsIncreasing() {
+	printf("Testing arrayIsIncreasing(...)\n");
 
+	int array1[] = { 1, 1, 2, 3, 3 };
+	int len1 = 5;
+	int array2[] = { 1, 2, 0, 4 };
+	int len2 = 4;
+	test_arrayIsIncreasing(array1, len1, 1);
+	test_arrayIsIncreasing(array2, len2, 0);
+	test_arrayIsIncreasing(NULL, 0, 1);
+	printf("\n");
+}
+void test_Haystack(int needle, int * array, int len, int expected) {
+	printArray(array, len);
+	printf("[%d]", needle);
+	int count = arrayIndexRFind(needle, array, len);
+	printf(". index = %d, expected = %d.", count, expected);
+	if (count != expected)
+		printf(" FAIL");
+	printf("\n");
+}
+void test_03_Haystack() {
+	printf("Testing arrayIsIncreasing(...)\n");
+
+	int haystack[] = { 1, 4, -5, 4 };
+	int len = 4;
+	test_Haystack(1, haystack, len, 0);
+	test_Haystack(4, haystack, len, 3);
+	test_Haystack(6, haystack, len, -1);
+	printf("\n");
+}
+void test_arrayFindSmallest(int * array, int len, int expected) {
+	printArray(array, len);
+	int count = arrayFindSmallest(array, len);
+	printf(". index = %d, expected = %d.", count, expected);
+	if (count != expected)
+		printf(" FAIL");
+	printf("\n");
+}
+void test_04_arrayMin() {
+	printf("Testing arrayIsIncreasing(...)\n");
+
+	int array[] = { 3, 4, 5 };
+	int array2[] = { 3, 2, 2 };
+	int len = 3;
+	test_arrayFindSmallest(array, len, 0);
+	test_arrayFindSmallest(array2, len, 1);
+	test_arrayFindSmallest(array, 0, 0);
+	printf("\n");
+}
 int main(int argc, char * * argv)
 {
     printf("Welcome to ECE264, we are working on PA01.\n"
@@ -109,9 +172,11 @@ int main(int argc, char * * argv)
 	   "\n");
 
     // Uncomment to run two example (incomplete) testcases.
-    // test_00_arraySum();
-    // test_01_arrayCountNegative();
-
+     test_00_arraySum();
+     test_01_arrayCountNegative();
+	 test_02_arrayIsIncreasing();
+	 test_03_Haystack();
+	 test_04_arrayMin();
     // Below are some testcases for the latter part of the assignment.
     // These testcases are incomplete, and are guides to get you started.
 
