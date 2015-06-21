@@ -211,32 +211,41 @@ int main(int argc, char * * argv)
     // -- my_strcpy. For this function you need a buffer where you
     // copy the string to. 
 
-    //char buffer[BUFFER_LEN];
-    //my_strcpy(buffer, s1);
-    //printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s1, buffer);
-    //my_strcpy(buffer, s2);
-    //printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s2, buffer);
-    //my_strcpy(buffer, s3);
-    //printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
+    char buffer[BUFFER_LEN];
+    my_strcpy(buffer, s1);
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s1, buffer);
+    my_strcpy(buffer, s2);
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s2, buffer);
+    my_strcpy(buffer, s3);
+    printf("my_strcpy(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
 
     //---------------------------------------------------------------
 
     // -- my_strcat. You will have to do this yourself... just
     // look at my_strcpy for an example, and go from there.
-
+	printf("test strcat\n");
+	my_strcat(buffer, s1);
+	printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s1, buffer);
+	my_strcat(buffer, s2);
+	printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s2, buffer);
+	my_strcat(buffer, s3);
+	printf("my_strcat(buffer, \"%s\"), buffer = \"%s\"\n", s3, buffer);
 
 
     //---------------------------------------------------------------
 
     // -- my_isspace. You will have to do this for yourself.
-
-
-
+	printf("test isSpace\n");
+	printf("is a 1 %d\n",my_isspace(' ')); // 1
+	printf("is a 1 %d\n", my_isspace('\t')); // 1
+	printf("is a 0 %d\n", my_isspace('a')); // 0
     //---------------------------------------------------------------
 
     // -- my_atoi. You will have to do this for yourself.
-
-
+	printf("test atoi\n");
+	printf("is a 0 %d\n", my_atoi(" y -12")); // 0
+	printf("is a -12 %d\n", my_atoi("  -12")); // -12
+	printf("is a 0 %d\n", my_atoi(" 0")); // 0
     //---------------------------------------------------------------
 
     return EXIT_SUCCESS;
