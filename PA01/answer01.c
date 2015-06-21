@@ -12,7 +12,7 @@ int arraySum(int * array, int len)
     int sum = 0;  //initial value.
     int i = 0;
     for (i = 0; i < len; i++) {
-	sum += array + i;
+	sum += array[i];
     }
     return sum;
 }
@@ -22,7 +22,7 @@ int arrayCountNegative(int * array, int len)
     int count = 0;
     int i;
     for (i = 0; i < len; i++) {
-	count += (array + i < 0);
+	count += (array[i] < 0);
     }
     return count;
 }
@@ -32,7 +32,7 @@ int arrayIsIncreasing(int * array, int len)
     int bool = 1;
     int i;
     for (i = 0; i < len - 1; i++) {
-	if (array + i > array + i + 1) {
+	if (array + i > array[i + 1]) {
 	    bool = 0;
 	}
     }
@@ -44,7 +44,7 @@ int arrayIndexRFind(int needle, const int * haystack, int len)
     int index = -1;
     int i;
     for (i = 0; i < len; i++) {
-	if (haystack + i == needle) {
+	if (haystack[i] == needle) {
 	    index = i;
 	}
     }
@@ -53,10 +53,10 @@ int arrayIndexRFind(int needle, const int * haystack, int len)
 
 int arrayFindSmallest(int * array, int len)
 {
-    int indexMin = 0
-    int i;
-    for ( i = 0; i < len; i++) {
-	if (array + i < array + indexMin) {
+	int indexMin = 0;
+	int i;
+    for (i = 0; i < len; i++) {
+	if (array[i] < array[indexMin]) {
 	    indexMin = i;
 	}
     }
