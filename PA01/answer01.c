@@ -9,27 +9,58 @@
 
 int arraySum(int * array, int len)
 {
-    return 0;
+    int sum = 0;  //initial value.
+    int i = 0;
+    for (i = 0; i < len; i++) {
+	sum += array + i;
+    }
+    return sum;
 }
 
 int arrayCountNegative(int * array, int len)
 {
-    return 0;
+    int count = 0;
+    int i;
+    for (i = 0; i < len; i++) {
+	count += (array + i < 0);
+    }
+    return count;
 }
 
 int arrayIsIncreasing(int * array, int len)
 {    
-    return 0;
+    int bool = 1;
+    int i;
+    for (i = 0; i < len - 1; i++) {
+	if (array + i > array + i + 1) {
+	    bool = 0;
+	}
+    }
+    return bool;
 }
 
 int arrayIndexRFind(int needle, const int * haystack, int len)
 {
-    return 0;
+    int index = -1;
+    int i;
+    for (i = 0; i < len; i++) {
+	if (haystack + i == needle) {
+	    index = i;
+	}
+    }
+    return index;
 }
 
 int arrayFindSmallest(int * array, int len)
 {
-    return 0;
+    int indexMin = 0
+    int i;
+    for ( i = 0; i < len; i++) {
+	if (array + i < array + indexMin) {
+	    indexMin = i;
+	}
+    }
+    return indexMin;
 }
 
 size_t my_strlen(const char * str)
