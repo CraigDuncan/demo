@@ -172,11 +172,11 @@ int main(int argc, char * * argv)
 	   "\n");
 
     // Uncomment to run two example (incomplete) testcases.
-     /*test_00_arraySum();
+     test_00_arraySum();
      test_01_arrayCountNegative();
 	 test_02_arrayIsIncreasing();
 	 test_03_Haystack();
-	 test_04_arrayMin();*/
+	 test_04_arrayMin();
     // Below are some testcases for the latter part of the assignment.
     // These testcases are incomplete, and are guides to get you started.
 
