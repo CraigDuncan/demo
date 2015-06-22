@@ -1,0 +1,18 @@
+Breakpoint 1 at 0x40075e: file pa01.c, line 59.
+Starting program: /home/shay/a/duncan54/ECE264/solutions/demo/PA01/pa01 
+
+Breakpoint 1, test_00_arraySum () at pa01.c:59
+59	    test_arraySum(NULL, len2, expected2);
+Undefined command: "pargc".  Try "help".
+No symbol "argc" in current context.
+$1 = 0
+$2 = 0
+64	    printf("\n"); // Tidy output is easier to use
+$3 = 0
+65	}
+main (argc=1, argv=0x7fffffffe508) at pa01.c:176
+176	     test_01_arrayCountNegative();
+177		 test_02_arrayIsIncreasing();
+Continuing.
+
+Program exited normally.
