@@ -204,6 +204,7 @@ int main(int argc, char * * argv)
 
     printf("my_strstr(\"%s\", \"World\") = %s\n", s1, my_strstr(s1, "World"));
     printf("my_strstr(\"%s\", \"\") = %s\n", s1, my_strstr(s1, ""));
+	printf("my_strstr(\"%s\", \"!\") = %s\n", s1, my_strstr(s1, "!"));
     printf("my_strstr(\"%s\", \"hello\") = %s\n", s1, my_strstr(s1, "hello"));
 
     //---------------------------------------------------------------
@@ -238,7 +239,8 @@ int main(int argc, char * * argv)
 	printf("test isSpace\n");
 	printf("is a 1 %d\n",my_isspace(' ')); // 1
 	printf("is a 1 %d\n", my_isspace('\t')); // 1
-	printf("is a 0 %d\n", my_isspace('a')); // 0
+	printf("is a 1 %d\n", my_isspace('\v')); // 1
+	printf("is a 0 %d\n", my_isspace('\\0')); // 0
     //---------------------------------------------------------------
 
     // -- my_atoi. You will have to do this for yourself.

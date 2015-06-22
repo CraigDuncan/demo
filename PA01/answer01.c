@@ -91,7 +91,7 @@ char * my_strstr(const char * haystack, const char * needle)
 {
 	int loc = 0;
 	int matchLetter = 0;
-	while (haystack[loc] != '\0') {
+	while (haystack[loc] != '\0' || needle[matchLetter] == '\0') {
 		if (needle[matchLetter] == '\0') {
 			return (char *) &haystack[loc - matchLetter];
 		}
@@ -137,10 +137,11 @@ int my_isspace(int ch)
 	char * s1 = "  \f\n\r\t\v";
 	int len = 0;
 	while (s1[len] != '\0') {
-		len++;
+		
 		if (ch == s1[len]){
 			return 1;
 		}
+		len++;
 	}
     return 0;
 }
